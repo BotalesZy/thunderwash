@@ -1,0 +1,471 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* 🔑 Esto elimina la posibilidad de que aparezca la línea blanca lateral */
+  position: relative;
+  scroll-behavior: smooth;
+
+}
+
+header {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  /* Cambiamos space-between por center para que todo se agrupe al medio */
+  justify-content: center; 
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.header-center-container {
+  display: flex;
+  align-items: center;
+  /* Aquí aplicamos la separación exacta que pediste */
+  gap: 100px; 
+}
+
+header a {
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Spectral', serif;
+  font-size: 1.8rem; /* Ajusta el tamaño a tu gusto */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  white-space: nowrap; /* Evita que el nombre se parta en dos líneas */
+  text-decoration: none;
+}
+
+.a{
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  color: black;
+}
+
+main {
+  flex: 1;                 /* ocupa todo el espacio disponible */
+}
+
+
+.separador {
+  width: 100%;
+  height: 80px; /* espacio estándar */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 820px;
+  overflow: hidden; /* Ya lo tienes, pero asegúrate de no quitarlo */
+  background-color: #1a1a1a;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Llena el espacio sin deformar la foto */
+  object-position: center; 
+  display: block;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurecemos un poco más para el contraste */
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 300px; /* Ajusta según el alto de tu logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  z-index: 2;
+}
+
+
+/* EL SEPARATOR (Úsalo para el "Sobre Nosotros") */
+.separator {
+  background-color: #ffffff !important; /* El azul Thunder */
+  display: flex !important;
+  width: 100% !important;
+  min-height: 250px !important; /* Altura ajustada */
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px; /* Más aire a los lados */
+}
+
+.separator-content h1,h2 {
+  color:#1359a8;
+  font-family: 'Spectral', serif;
+
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* EL FOOTER (Limpio) */
+.footer {
+  background-color: #1359a8;
+  color: #ffffff;
+  width: 100%;
+  padding: 50px 5vw;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h2 {
+  font-family: 'Spectral', serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Fila base para TODO el contenido */
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Iconos */
+.footer-item ion-icon {
+  font-size: 4rem;
+  color: white;
+}
+
+.tT p{
+  font-size: 1.3pc;
+}
+
+
+h1{
+ font-family: "Spectral", serif;
+  font-style: normal;
+}
+
+
+
+
+.ul-NL{
+   display: flex;         /* Enables flexbox on the parent container */
+  list-style: none;      /* Removes default bullet points */
+  padding: 0px;            /* Removes default left padding */
+  gap: 40px;
+}
+
+.img-chico {
+  width: 310px;
+  height: 220px;
+  object-fit: cover; /* ajusta la imagen sin deformarla */
+}
+.img-2 {
+  width: 450px;
+  height: auto;
+  z-index: 3;
+  position: absolute; /* Para moverlo sin afectar al texto */
+  left: 50%;
+  transform: translateX(-50%); /* Centrado inicial absoluto */
+  animation: moveLogoLeft 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+.servicios-hibridos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Para que ambos bloques tengan la misma altura */
+    padding: 60px 5%;
+    background-color: #fff;
+    gap: 0;
+}
+
+.servicio-bloque {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.divisor-vertical {
+    width: 2px;
+    background-color: #eee;
+    margin: 40px 0;
+}
+
+.header-servicio h3 {
+    font-family: 'Spectral', serif;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.precio-lista .item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+    font-size: 1.1rem;
+}
+
+.gancho {
+    margin-top: 30px;
+    font-style: italic;
+    color: #666;
+}
+
+
+.socialM-White a {
+  color: white;
+  size: 4rem;
+}
+
+
+
+
+.text-container {
+ padding-left: 0;
+  opacity: 0;
+  animation: revealTextRight 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+/* Nombre empresa */
+.company-name {
+  font-size: 64px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Eslogan */
+.quote {
+  margin-top: 10px;
+  font-size: 34px;
+  color: #dcdcdc;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 2s; /* 2 segundos después de iniciar todo */
+}
+
+.quote2 {
+    font-size: 22px;
+  margin-top: 10px;
+    font-style: italic;
+  color: #666;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 2s; /* 2 segundos después de iniciar todo */
+}
+
+/* --- ANIMACIONES --- */
+
+@keyframes moveLogoLeft {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: calc(50% - 320px); /* Ajusta este número para acercar/alejar el logo del texto */
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes revealTextRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+  .text-mask {
+  overflow: hidden;              /* 🔑 NUNCA deja ver detrás */
+  margin-left: 250px;             /* separación del logo */
+  max-width: none; /* 👈 clave */
+}
+
+
+
+
+/*Cosas de la banda de ofertas*/
+.promo-band {
+  width: 100%;
+  overflow: hidden;
+  background-color: #1359a8;
+  color: white;
+  padding: 12px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-flex; /* inline-flex es clave aquí */
+  gap: 200px; /* Más espacio entre promos */
+  animation: scroll-continuo 25s linear infinite;
+  padding-left: 100%; /* Empieza completamente fuera a la derecha */
+}
+
+.promo-item {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-continuo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Se mueve exactamente su propio ancho */
+  }
+}
+
+.promo-band:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+
+
+
+
+
+
+/*Aqui empieza las fuentes, esta es la Tipografia Spectral*/
+.spectral-extralight {
+  font-family: "Spectral", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.spectral-light {
+  font-family: "Spectral", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.spectral-regular {
+  font-family: "Spectral", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.spectral-medium {
+  font-family: "Spectral", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.spectral-semibold {
+  font-family: "Spectral", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.spectral-bold {
+  font-family: "Spectral", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.spectral-extrabold {
+  font-family: "Spectral", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.spectral-extralight-italic {
+  font-family: "Spectral", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.spectral-light-italic {
+  font-family: "Spectral", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.spectral-regular-italic {
+  font-family: "Spectral", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.spectral-medium-italic {
+  font-family: "Spectral", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.spectral-semibold-italic {
+  font-family: "Spectral", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.spectral-bold-italic {
+  font-family: "Spectral", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.spectral-extrabold-italic {
+  font-family: "Spectral", serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+/*Y aqui termina la Tipografia*/
+
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

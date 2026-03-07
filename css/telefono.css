@@ -1,0 +1,318 @@
+/* =========================
+   RESPONSIVE – MOBILE FIRST
+   ========================= */
+
+
+   
+
+@media (max-width: 1024px) { /* tablets */ }
+@media (max-width: 768px)  { /* móviles */ }
+@media (max-width: 480px)  { /* móviles chicos */ }
+
+
+@media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative; /* Ayuda a contener elementos absolutos */
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .header-center-container {
+    gap: 50px;
+  }
+
+  header a {
+    font-size: 1.1rem;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 820px; /* Tamaño original mantenido */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img {
+  position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-content {
+position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column; /* Apilado vertical */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    /* Eliminamos transforms pesados para evitar saltos en la animación */
+    top: auto;
+    left: auto;
+    transform: none; 
+    gap: 10px;
+
+}
+
+.img-2 {
+width: 80%;
+    max-width: 300px;
+    height: auto;
+    position: relative;
+    left: auto;
+    margin: 0 auto;
+    opacity: 0;
+    /* Aplicamos la animación de subida */
+    animation: moveLogoUpMobile 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: 0.5s;
+}
+  
+  /* Evita que los bloques de precios se salgan */
+  .servicio-bloque {
+    width: 100%;
+    box-sizing: border-box; /* 🔑 Fundamental para que el padding no sume ancho */
+  }
+
+.text-mask {
+margin-left: 0; /* Centrado total */
+    overflow: visible;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.a{
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  color: black;
+}
+
+.text-container {
+opacity: 0;
+    text-align: center;
+    padding: 0;
+    /* Aparece después del logo subiendo sutilmente */
+    animation: revealTextUpMobile 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: 1s;
+}
+
+  .company-name {
+   font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  .quote {
+font-size: 18px;
+    transform: none;
+    opacity: 0;
+    animation: fadeInSimple 0.8s ease-out forwards;
+    animation-delay: 1.8s;
+  }
+
+  /* ---------- SERVICIOS ---------- */
+  .servicios-hibridos {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .divisor-vertical {
+    display: none;
+  }
+
+  .header-servicio h3 {
+    font-size: 1.8rem;
+  }
+
+  /* ---------- UBICACIÓN ---------- */
+.separator {
+    flex-direction: column !important; /* Apila texto e imagen */
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 40px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .separator-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .separator-content h1, 
+  .separator-content h3, 
+  .separator-content{
+    margin-left: 0 !important; /* Elimina cualquier empuje a la derecha */
+    margin-right: 0 !important;
+    width: 100%;
+  }
+
+  .img-chico {
+    margin-top: 20px;
+    max-width: 180px; /* Logo más prudente en móvil */
+    height: auto;
+  }
+
+  /* ---------- FOOTER ---------- */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-item ion-icon {
+    font-size: 3rem;
+  }
+
+}
+
+@keyframes fadeInSimple {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandTextMask {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px; /* ajusta según el texto */
+  }
+}
+@keyframes moveLogoUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes revealTextUpMobile {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInSimple {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+
+  /* Fuerza el color y quita el subrayado a ese enlace específico */
+a.a, .separator-content a.a {
+    color: black !important;
+    text-decoration: none !important;
+    -webkit-text-fill-color: black; /* Para Safari en iOS */
+}
+
+/* También por si el navegador lo detecta como dirección */
+[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+
+/* Esto asegura que el enlace se vea igual siempre, sin importar el estado */
+.separator-content a, 
+.separator-content a:link, 
+.separator-content a:visited, 
+.separator-content a:hover, 
+.separator-content a:active {
+    color: #000000 !important; /* Negro puro */
+    text-decoration: none !important;
+}
+
+
+/* Específico para forzar el color en detectores de iOS */
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* Y para el enlace que tú creaste manualmente */
+.a * {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+
+/* ---------- PROMO BAND ---------- */
+.promo-band {
+  width: 100%;
+  overflow: hidden;
+  background-color: #1359a8;
+  color: white;
+  padding: 12px;
+  white-space: nowrap;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 200px;
+  animation: scroll-continuo 25s linear infinite;
+  padding-left: 100%;
+}
+
+.promo-item {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-continuo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.promo-band:hover .marquee-content {
+  animation-play-state: paused;
+}
